@@ -26,12 +26,12 @@ http://www.templatemo.com/tm-475-holiday
 </head>
 <body>
 	<!-- Header -->
-	<div class="tm-header">
+	<div class="tm-header" id="grad1">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-					<a href="#" class="tm-site-name">Holiday</a>	
-				</div>
+  					<a href="index.html" class="tm-site-name"><img src="resortimages/gdmainlogo.jpg" alt="Image"  width=16% height=1000% margin-left=0 /></a>	
+  				</div>
 				<div class="col-lg-6 col-md-8 col-sm-9">
 					<div class="mobile-menu-icon">
 						<i class="fa fa-bars"></i>
@@ -57,10 +57,10 @@ http://www.templatemo.com/tm-475-holiday
 		    <li>
 			    <div class="tm-banner-inner">
 					<h1 class="tm-banner-title">Your <span class="tm-yellow-text">Special</span> Dream Resort</h1>
-					<p class="tm-banner-subtitle">For Upcoming Holidays</p>
+					<p class="tm-banner-subtitle" id="font-effect-fire">For Upcoming Holidays</p>
 					<a href="#more" class="tm-banner-link">Contact Us</a>	
 				</div>
-				<img src="img/banner-3.jpg" alt="Banner 3" />	
+				<img src="gdimages/img20.jpg" alt="Banner 3" />	
 		    </li>		    
 		  </ul>
 		</div>	
@@ -75,19 +75,29 @@ http://www.templatemo.com/tm-475-holiday
 					<li>
 						<img src="img/world-map.png" alt="image" class="contact-image" />
 						<div class="contact-text">
-							<h2 class="slider-title">Club House</h2>
+							<marquee><h2 class="slider-title">GD Club and Resort</h2></marquee>
 							<h3 class="slider-subtitle">An invitation for a truly unforgettable, lasting memory combining the very best of luxury and serenity.<br><br>
-                            
+                            <center><h6>Connect us for outstanding service</h6><h4><i style="font-size:24px;color:green"  class="fa">&#xf095;</i>7094988899</h4></center>
+<center><h6>Email us</h6><h4><i style="font-size:24px;color:green"  class="fa">&#xf0e0;</i>booking@gdclubresort.com</h4></center>
 							<div class="slider-social">
 								<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
 								<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
 								<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
 								<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
 							</div>
+
 						</div>			      
 					</li>
 				</ul>
+</hr>
+<marquee><h4>Thirumaal Beach Land no 452&453
+Valluvar Medu,Bahour Cummune Panchayat,Manapet,
+Opposite of Mahindra Club,
+Pillaiyarkuppam
+Puducherry-607402</h4></marquee>
 			</div>
+
+
 		</div>
 	</section>		
 	
@@ -103,7 +113,7 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 			<div class="row">
 				<!-- contact form -->
-				<form action="#" method="post" class="tm-contact-form">
+				<form action="#" method="post" class="tm-contact-form" onsubmit="sendEmail(); reset(); return false;">
 					<div class="col-lg-6 col-md-6">
 						<div id="google-map"></div>
 						<div class="contact-social">
@@ -121,6 +131,9 @@ http://www.templatemo.com/tm-475-holiday
 						<div class="form-group">
 							<input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
 						</div>
+<div class="form-group">
+							<input type="text" id="contact_phoneno" class="form-control" placeholder="PHONE NO" />
+						</div>
 						<div class="form-group">
 							<input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
 						</div>
@@ -135,15 +148,18 @@ http://www.templatemo.com/tm-475-holiday
 			</div>			
 		</div>
 	</section>
+
+
 	<footer class="tm-black-bg">
 		<div class="container">
 			<div class="row">
-				<p class="tm-copyright-text"> 
+				<p class="tm-copyright-text" id="font-effect-fire">
                 
-                | Club House</p>
+              &copy <b>2021 GD Resort|All rights reserved</p></b>
 			</div>
 		</div>		
 	</footer>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->
 	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
@@ -209,6 +225,29 @@ http://www.templatemo.com/tm-475-holiday
 		  	// Google Map
 		  	loadGoogleMap();
 		  });
+
+
 	</script>
+
+<script>
+function sendEmail(){
+Email.send({
+    Host : "smtp.gmail.com",
+Username : 'priya19951121@gmail.com',
+    Password : "ftdtpjfxcsprqjoc",
+    To : 'priya19951121@gmail.com',
+    From : document.getElementById("contact_email").value,
+    Subject : document.getElementById("contact_subject").value,
+    Body : "Name:"+document.getElementById("contact_name").value
++"<br>Email:"+document.getElementById("contact_email").value
++"<br>Phone no:"+document.getElementById("contact_phoneno").value
++"<br>Subject:"+document.getElementById("contact_subject").value
++"<br>Message:"+document.getElementById("contact_message").value
+}).then(
+  message => alert(message)
+);
+}
+</script>
+
 </body>
 </html>
